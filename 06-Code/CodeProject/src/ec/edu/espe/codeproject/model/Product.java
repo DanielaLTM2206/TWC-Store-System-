@@ -6,6 +6,7 @@ import java.util.ArrayList;
 /**
  *
  * @author Josue Villavicencio, DCCO - ESPE,MyWayCode
+ * @author Diana Sosa
  */
 public class Product {
     private int code;
@@ -13,10 +14,10 @@ public class Product {
     private int lote;
     private String name;
     private String descrption;
-    private ArrayList<Costumer> costumers;
+    private ArrayList<Customer> costumers;
     private ArrayList<Cashier> cachiers;
 
-    public Product(int code, float price, int lote, String name, String descrption, ArrayList<Costumer> costumers, ArrayList<Cashier> cachiers) {
+    public Product(int code, float price, int lote, String name, String descrption, ArrayList<Customer> costumers, ArrayList<Cashier> cachiers) {
         this.code = code;
         this.price = price;
         this.lote = lote;
@@ -99,14 +100,14 @@ public class Product {
     /**
      * @return the costumers
      */
-    public ArrayList<Costumer> getCostumers() {
+    public ArrayList<Customer> getCostumers() {
         return costumers;
     }
 
     /**
      * @param costumers the costumers to set
      */
-    public void setCostumers(ArrayList<Costumer> costumers) {
+    public void setCostumers(ArrayList<Customer> costumers) {
         this.costumers = costumers;
     }
 
@@ -123,7 +124,7 @@ public class Product {
     public void setCachiers(ArrayList<Cashier> cachiers) {
         this.cachiers = cachiers;
     }
-    public void reciveCostumer(Costumer costumer){
+    public void reciveCostumer(Customer costumer){
         
     }
     public void reciveCashier(Cashier cashier){

@@ -6,11 +6,13 @@ import java.util.ArrayList;
 /**
  *
  * @author Josue Villavicencio, DCCO - ESPE,MyWayCode
+ * @author Diana Sosa
  */
 public class Providers {
     private int cellPhone;
     private String providerName;
     private ArrayList<ViveresPedro> viveresPedros;
+    private ArrayList<ProviderProduct> providerProduct;
    
     
 
