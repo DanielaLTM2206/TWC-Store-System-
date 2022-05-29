@@ -16,6 +16,16 @@ public class Product {
     private ArrayList<Costumer> costumers;
     private ArrayList<Cashier> cachiers;
 
+    public Product(int code, float price, int lote, String name, String descrption, ArrayList<Costumer> costumers, ArrayList<Cashier> cachiers) {
+        this.code = code;
+        this.price = price;
+        this.lote = lote;
+        this.name = name;
+        this.descrption = descrption;
+        this.costumers = costumers;
+        this.cachiers = cachiers;
+    }
+
     /**
      * @return the code
      */
@@ -112,6 +122,12 @@ public class Product {
      */
     public void setCachiers(ArrayList<Cashier> cachiers) {
         this.cachiers = cachiers;
+    }
+    public void reciveCostumer(Costumer costumer){
+        
+    }
+    public void reciveCashier(Cashier cashier){
+        
     }
     
 }    
