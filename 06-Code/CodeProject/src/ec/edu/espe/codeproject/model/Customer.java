@@ -8,8 +8,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Josue Villavicencio, DCCO - ESPE,MyWayCode
+ * 
  * @author Diana Sosa
+ * 
  */
 public class Customer {
     private int id;

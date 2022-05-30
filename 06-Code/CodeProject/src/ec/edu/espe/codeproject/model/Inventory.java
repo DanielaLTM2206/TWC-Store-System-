@@ -6,10 +6,8 @@ package ec.edu.espe.codeproject.model;
 
 /**
  *
- * @author Josue Villavicencio, DCCO - ESPE,MyWayCode
- * @author Diana Sosa
- *
+ * @author Daniela Tituaña, DCCO-ESPE, MyWayCode
  */
-public class Money {
+public class Inventory {
     
 }
