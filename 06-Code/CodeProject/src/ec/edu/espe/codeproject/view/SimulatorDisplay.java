@@ -9,7 +9,7 @@ public class SimulatorDisplay {
         System.out.println("Viveres Pedro System, MyWayCode");
         
          int limitMenu;
-        limitMenu = 1;
+        limitMenu = 2;
         
         System.out.println("1. Sale Register ");
         System.out.println("2. Inventory Record");
