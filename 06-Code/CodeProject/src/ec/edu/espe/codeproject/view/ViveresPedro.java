@@ -4,7 +4,7 @@
  *
  * @author  DCCO - ESPE,MyWayCode
  */
-public class SimulatorDisplay {
+public class ViveresPedro {
     public static void main(String[] args) {
         System.out.println("Viveres Pedro System, MyWayCode");
         
