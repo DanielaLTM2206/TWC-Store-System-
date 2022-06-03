@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  *
  * @author Josue Villavicencio, DCCO - ESPE,MyWayCode
- * @author Diana Sosa
+ * 
  */
 public class Product {
     private int code;
@@ -15,7 +15,7 @@ public class Product {
     private String name;
     private String descrption;
     private ArrayList<Customer> costumers;
-    private ArrayList<Cashier> cachiers;
+        private ArrayList<Cashier> cachiers;
 
     public Product(int code, float price, int lote, String name, String descrption, ArrayList<Customer> costumers, ArrayList<Cashier> cachiers) {
         this.code = code;

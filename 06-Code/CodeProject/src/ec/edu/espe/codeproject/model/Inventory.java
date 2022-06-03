@@ -25,5 +25,80 @@ public class Inventory {
  ArrayList<ProductList> productList;
  public productList(ProductList productList){ 
  }
- }
+
+    public String getProduct() {
+        return product;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public boolean isDiscount() {
+        return discount;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public <any> getProductList() {
+        return productList;
+    }
+
+    public void setProduct(String product) {
+        this.product = product;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public void setDiscount(boolean discount) {
+        this.discount = discount;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setProductList(<any> productList) {
+        this.productList = productList;
+    }
+
+   
+    }
+ 
  

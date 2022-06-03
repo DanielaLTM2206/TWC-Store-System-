@@ -6,10 +6,15 @@ package ec.edu.espe.codeproject.model;
 
 /**
  *
- * @author Josue Villavicencio, DCCO - ESPE,MyWayCode
- * @author Diana Sosa
- *
+ * @author MARTIN
  */
-public class Money {
+class productList {
+    public productList searchProduct(){
+     return new productList();
+    }
+
+    public productList() {
+    }
     
 }
+    
