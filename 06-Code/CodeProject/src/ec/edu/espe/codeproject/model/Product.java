@@ -1,4 +1,3 @@
-
 package ec.edu.espe.codeproject.model;
 
 import java.util.ArrayList;

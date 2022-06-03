@@ -1,28 +1,20 @@
-
 package ec.edu.espe.codeproject.model;
-
 import java.util.ArrayList;
-
 /**
- *
- * @author Josue Villavicencio, DCCO - ESPE,MyWayCode
- * 
+ * @author Josue Villavicencio, DCCO - ESPE,MyWayCode 
  */
 public class Providers {
     private int cellPhone;
     private String providerName;
     private ArrayList<ViveresPedro> viveresPedros;
     private ArrayList<ProviderProduct> providerProduct;
-   
-    
 
     public Providers(int cellPhone, String providerName, ArrayList<ViveresPedro> viveresPedros) {
         this.cellPhone = cellPhone;
         this.providerName = providerName;
         this.viveresPedros = viveresPedros;
     }
-    
-    
+  
      public void viveresPedro(ViveresPedro viverespedros){ 
       }
      
@@ -31,7 +23,6 @@ public class Providers {
         
         return money;
     }
-
     /**
      * @return the cellPhone
      */
