@@ -2,7 +2,7 @@ package ec.edu.espe.codeproject.model;
 
 /**
  *
- * @author Daniela Tituaña, DCCO-ESPE, MyWayCode
+ * @author Martin Toapanta, DCCO-ESPE, MyWayCode
  */
 public class Inventory {
     private String product;
