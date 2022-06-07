@@ -1,4 +1,10 @@
  package ec.edu.espe.codeproject.view;
+ 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 /**
  *
@@ -8,26 +14,51 @@ public class ViveresPedro {
     public static void main(String[] args) {
         System.out.println("Viveres Pedro System, MyWayCode");
         
-         int limitMenu;
-        limitMenu = 2;
-        
-        System.out.println("1. Sale Register ");
-        System.out.println("2. Inventory Record");
-        System.out.println("3. Add New Product");
-        System.out.println("4. Seach Product");
-        System.out.println("5. Invoice History");
-        
-        
-        switch(limitMenu){
-            case 1 -> System.out.println("Record of sales of the day with date and time");
-            case 2 -> System.out.println("Registers the entry and exit of products from inventory");
-            case 3 -> System.out.println("New products are added with name, batch and unit price");
-            case 4 -> System.out.println("Search for a product by name and batch");
-            case 5 -> System.out.println("There will be a record of the invoices issued daily");
+        Scanner Input;
+        String textData;
+        Input = new Scanner(System.in);
+        try {
+            FileWriter fileWriter;
+            BufferedWriter bufferedWriter;
+            String path = "C:\\Users\\USER\\Desktop\\POO EDISON\\Cashier.csv";
             
+            File file = new File(path);
+            fileWriter = new FileWriter(file);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            
+            System.out.println("Enter your ID: ");
+            textData = Input.nextLine();
+            bufferedWriter.write(textData);
+            bufferedWriter.newLine();
+            System.out.println("Enther your Name");
+            textData = Input.nextLine();
+            bufferedWriter.write(textData);
+            bufferedWriter.newLine();
+            System.out.println("Enther your Email");
+            textData = Input.nextLine();
+            bufferedWriter.write(textData);
+            bufferedWriter.newLine();
+            System.out.println("Enther your User");
+            textData = Input.nextLine();
+            bufferedWriter.write(textData);
+            bufferedWriter.newLine();
+            System.out.println("Enther your Password");
+            textData = Input.nextLine();
+            bufferedWriter.write(textData);
+            bufferedWriter.newLine();
+            bufferedWriter.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
-}
+        
+        
+    }
+
         
     
         

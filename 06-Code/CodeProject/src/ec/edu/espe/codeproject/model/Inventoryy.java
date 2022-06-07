@@ -2,7 +2,11 @@ package ec.edu.espe.codeproject.model;
 
 /**
  *
+<<<<<<< HEAD:06-Code/CodeProject/src/ec/edu/espe/codeproject/model/Inventory.java
+ * @author Martin Toapanta, DCCO-ESPE, MyWayCode
+=======
  * @author Martín Toapanta, DCCO-ESPE, MyWayCode
+>>>>>>> 3362fb85d336ae1786a634565084fc33d92a4ac7:06-Code/CodeProject/src/ec/edu/espe/codeproject/model/Inventoryy.java
  */
 public class Inventoryy {
     private String product;
