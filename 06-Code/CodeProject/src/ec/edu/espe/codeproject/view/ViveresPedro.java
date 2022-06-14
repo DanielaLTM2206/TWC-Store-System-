@@ -46,10 +46,6 @@ public class ViveresPedro {
             textData = Input.nextLine();
             bufferedWriter.write(textData);
             bufferedWriter.newLine();
-            System.out.println("Enther your Password");
-            textData = Input.nextLine();
-            bufferedWriter.write(textData);
-            bufferedWriter.newLine();
             bufferedWriter.close();
         } catch (Exception e) {
             e.printStackTrace();
