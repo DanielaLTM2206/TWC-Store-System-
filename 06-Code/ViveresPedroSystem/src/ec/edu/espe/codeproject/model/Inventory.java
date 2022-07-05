@@ -6,7 +6,7 @@ package ec.edu.espe.codeproject.model;
  * @author Martin Toapanta, DCCO-ESPE, MyWayCode
 
 */
-public class Inventoryy {
+public class Inventory {
     private String product;
     private int code;
     private String type;
@@ -16,7 +16,7 @@ public class Inventoryy {
     private String date;
     private String status;
 
-    public Inventoryy(String product, int code, String type, int amount, float price, boolean discount, String date, String status) {
+    public Inventory(String product, int code, String type, int amount, float price, boolean discount, String date, String status) {
         this.product = product;
         this.code = code;
         this.type = type;
@@ -141,7 +141,7 @@ public class Inventoryy {
 
     @Override
     public String toString() {
-        return "Inventoryy{" + "product=" + product + ", code=" + code + ", type=" + type + ", amount=" + amount + ", price=" + price + ", discount=" + discount + ", date=" + date + ", status=" + status + '}';
+        return "Inventory{" + "product=" + product + ", code=" + code + ", type=" + type + ", amount=" + amount + ", price=" + price + ", discount=" + discount + ", date=" + date + ", status=" + status + '}';
     }
 }
    

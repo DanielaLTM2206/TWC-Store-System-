@@ -27,6 +27,10 @@ public class Cashier {
         return "Cashier{" + "id=" + id + ", CellPhone=" + CellPhone + ", name=" + name + ", adress=" + adress + ", email=" + email + ", user=" + user + ", password=" + password + '}';
     }
     
+    public String toStringData() {
+        return id + "," + CellPhone + "," + adress + "," + email + "," + user + "," + password + "/n";
+    }
+    
     public int getId() {
         return id;
     }
