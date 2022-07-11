@@ -14,23 +14,10 @@ public class Cashier {
     private String user; 
     private String password;
 
-    /**
-     *
-     * @return
-     */
-    public String Cashier() {
+    
+    public Cashier() {
         
-        Scanner sn = new Scanner (System.in);
-        boolean salir = false;
-        int option;
-        
-        System.out.println("Enter your ID: ");
-        option = sn.ge
-        
-        
-            option = sn.nextInt();
-        
-        return null;
+      
         
     }
     
