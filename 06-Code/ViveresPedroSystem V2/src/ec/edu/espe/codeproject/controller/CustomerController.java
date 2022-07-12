@@ -1,7 +1,7 @@
 
-package ec.edu.espe.storepedro.controller;
+package ec.edu.espe.codeproject.controller;
 
-import ec.edu.espe.storepedro.model.Customer;
+import ec.edu.espe.codeproject.model.Customer;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -16,7 +16,7 @@ public class CustomerController {
         message = customer.getName() + " is going to be added to the system";
         JOptionPane.showMessageDialog(frmFrame, message);
         message = customer.getName() + " Are you sure that you want to register "
-                + customer.getName() + "to the system?";
+                + customer.getName() + " to the system?";
         reply = JOptionPane.showConfirmDialog(frmFrame, message);
 
         if (reply == JOptionPane.YES_OPTION) {

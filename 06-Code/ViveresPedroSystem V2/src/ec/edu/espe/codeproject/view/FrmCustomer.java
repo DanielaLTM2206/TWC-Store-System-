@@ -1,8 +1,9 @@
 
-package ec.edu.espe.storepedro.view;
+package ec.edu.espe.codeproject.view;
 
-import ec.edu.espe.storepedro.controller.CustomerController;
-import ec.edu.espe.storepedro.model.Customer;
+import ec.edu.espe.codeproject.controller.CustomerController;
+import ec.edu.espe.codeproject.model.Customer;
+
 
 /**
  *
@@ -58,6 +59,11 @@ public class FrmCustomer extends javax.swing.JFrame {
 
         txtId.setToolTipText("Here you must enter your Cedula");
         txtId.setName(""); // NOI18N
+        txtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdActionPerformed(evt);
+            }
+        });
 
         txtName.setToolTipText("Last Name First Name");
 
@@ -131,8 +137,13 @@ public class FrmCustomer extends javax.swing.JFrame {
         btnRemove.setToolTipText("The customer will be removed forever from of system");
         btnRemove.setEnabled(false);
 
-        btnSearch.setText("Search");
+        btnSearch.setText("Return");
         btnSearch.setToolTipText("You can search the customer based on the id");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -215,6 +226,16 @@ public class FrmCustomer extends javax.swing.JFrame {
         txtCellphone.setText("");
         txtEmail.setText("");
     }//GEN-LAST:event_btnRegisterActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        FrmMenu frmMenu = new FrmMenu();
+        frmMenu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdActionPerformed
 
     /**
      * @param args the command line arguments

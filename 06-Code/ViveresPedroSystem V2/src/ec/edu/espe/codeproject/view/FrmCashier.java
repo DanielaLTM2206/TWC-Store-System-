@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package ec.edu.espe.codeproject.controller;
+package ec.edu.espe.codeproject.view;
 
+import ec.edu.espe.codeproject.controller.CashierController;
+import ec.edu.espe.codeproject.model.Cashier;
 import javax.swing.JOptionPane;
 
 /**
@@ -38,7 +40,7 @@ public class FrmCashier extends javax.swing.JFrame {
         txtID = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         txtAddress = new javax.swing.JTextField();
-        intCell = new javax.swing.JTextField();
+        txtCellPhone = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -60,10 +62,26 @@ public class FrmCashier extends javax.swing.JFrame {
         jLabel6.setText("E-mail:");
 
         txtID.setToolTipText("Enter you Cedula");
+        txtID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIDActionPerformed(evt);
+            }
+        });
 
         txtName.setToolTipText("Enter your complet name");
 
         txtAddress.setToolTipText("Enter your address with streets");
+        txtAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAddressActionPerformed(evt);
+            }
+        });
+
+        txtCellPhone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCellPhoneActionPerformed(evt);
+            }
+        });
 
         txtEmail.setToolTipText("dont forget @");
 
@@ -102,7 +120,7 @@ public class FrmCashier extends javax.swing.JFrame {
                             .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(intCell, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCellPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(176, 176, 176)
@@ -137,7 +155,7 @@ public class FrmCashier extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(intCell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCellPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -171,8 +189,42 @@ public class FrmCashier extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JOptionPane.showMessageDialog(this,"Cashier Added");
+        Cashier cashier;
+        int id;
+        String name;
+        String address;
+        String numberOfcellphone;
+        String email;
+        CashierController cashierController;
+        cashierController = new CashierController();
+
+        id = Integer.parseInt(txtID.getText());
+        name = txtName.getText();
+        address = txtAddress.getText();
+        numberOfcellphone = txtCellPhone.getText();
+        email = txtEmail.getText();
+        
+        cashier = new Cashier(id, name, address, numberOfcellphone, email);
+        cashierController.register(cashier, this);
+        
+        txtID.setText("");
+        txtName.setText("");
+        txtAddress.setText("");
+        txtCellPhone.setText("");
+        txtEmail.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDActionPerformed
+
+    private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAddressActionPerformed
+
+    private void txtCellPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCellPhoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCellPhoneActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,7 +263,6 @@ public class FrmCashier extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField intCell;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -223,6 +274,7 @@ public class FrmCashier extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtCellPhone;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtName;
