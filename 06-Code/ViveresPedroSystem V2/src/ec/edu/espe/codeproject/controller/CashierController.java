@@ -16,8 +16,7 @@ public class CashierController {
     public boolean register(Cashier cashier, JFrame frmFrame) {
         int reply;
         String message;
-        message = cashier.getName() + " is going to be added to the system";
-        JOptionPane.showMessageDialog(frmFrame, message);
+        
         message = cashier.getName() + " Are you sure that you want to register "
                 + cashier.getName() + " to the system?";
         reply = JOptionPane.showConfirmDialog(frmFrame, message);
@@ -28,9 +27,6 @@ public class CashierController {
         } else {
             JOptionPane.showMessageDialog(frmFrame, "it was not saved","WARNING",JOptionPane.ERROR_MESSAGE);
         }
-        //if yes - save to data base
-        //else- don´t save it
-        //code to insert in the database
         {
             return true;
         }

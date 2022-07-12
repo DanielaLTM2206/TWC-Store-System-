@@ -20,6 +20,11 @@ public class Customer {
         this.email = email;
     }
 
+    public Customer(String id, String name, String address, String numberOfcellphone, String email) {
+        }
+
+   
+
     /**
      * @return the id
      */

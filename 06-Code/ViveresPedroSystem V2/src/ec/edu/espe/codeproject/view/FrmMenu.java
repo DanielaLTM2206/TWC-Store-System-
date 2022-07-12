@@ -66,7 +66,7 @@ public class FrmMenu extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Broadway", 2, 24)); // NOI18N
         jLabel1.setText("VIVERES PEDRO SYSTEM");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/codeproject/view/7305686299771bf3777c4429dba0ebcaH.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/codeproject/images/7305686299771bf3777c4429dba0ebcaH.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 

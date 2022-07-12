@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author Daniela Tituaña, DCCO - ESPE,MyWayCode
  */
 public class Cashier {
-    private int id;
+    private String id;
     private String cellPhone;
     private String name;
     private String adress; 
@@ -15,7 +15,7 @@ public class Cashier {
     private String password;
     
 
-    public Cashier(int id, String cellPhone, String name, String adress, String email, String user, String password) {
+    public Cashier(String id, String cellPhone, String name, String adress, String email, String user, String password) {
         this.id = id;
         this.cellPhone = cellPhone;
         this.name = name;
@@ -26,20 +26,28 @@ public class Cashier {
     }
 
 
-    public Cashier(int id, String name, String address, String numberOfcellphone, String email) {
+    public Cashier(String id, String name, String address, String numberOfcellphone, String email) {
         }
+
+    public Cashier() {
+        
+        }
+
+    public Cashier(int id, String name, String address, String numberOfcellphone, String email) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
     /**
      * @return the id
      */
-    public int getId() {
+    public String getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

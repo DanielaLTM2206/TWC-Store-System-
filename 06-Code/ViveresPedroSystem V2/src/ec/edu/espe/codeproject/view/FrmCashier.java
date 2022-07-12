@@ -1,11 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package ec.edu.espe.codeproject.view;
 
 import ec.edu.espe.codeproject.controller.CashierController;
+import ec.edu.espe.codeproject.controller.CustomerController;
+import ec.edu.espe.codeproject.controller.MongoDBManager;
 import ec.edu.espe.codeproject.model.Cashier;
+import ec.edu.espe.codeproject.model.Customer;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +18,7 @@ public class FrmCashier extends javax.swing.JFrame {
      */
     public FrmCashier() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -189,29 +189,52 @@ public class FrmCashier extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Cashier cashier;
-        int id;
-        String name;
-        String address;
-        String numberOfcellphone;
-        String email;
-        CashierController cashierController;
-        cashierController = new CashierController();
-
-        id = Integer.parseInt(txtID.getText());
-        name = txtName.getText();
-        address = txtAddress.getText();
-        numberOfcellphone = txtCellPhone.getText();
-        email = txtEmail.getText();
+           Cashier cashier;
+//        int id;
+//        String name;
+//        String address;
+//        String numberOfcellphone;
+//        String email;
+//        CashierController cashierController;
+//        cashierController = new CashierController();
+//
+//        id = Integer.parseInt(txtID.getText());
+//        name = txtName.getText();
+//        address = txtAddress.getText();
+//        numberOfcellphone = txtCellPhone.getText();
+//        email = txtEmail.getText();
+//        
+//        cashier = new Cashier(id, name, address, numberOfcellphone, email);
+//        cashierController.register(cashier, this);
+//        
+//        txtID.setText("");
+//        txtName.setText("");
+//        txtAddress.setText("");
+//        txtCellPhone.setText("");
+//        txtEmail.setText("");
+     
+        MongoDBManager saveCashier;
         
-        cashier = new Cashier(id, name, address, numberOfcellphone, email);
-        cashierController.register(cashier, this);
+        cashier = new Cashier();
+        saveCashier = new MongoDBManager();
         
-        txtID.setText("");
-        txtName.setText("");
-        txtAddress.setText("");
-        txtCellPhone.setText("");
-        txtEmail.setText("");
+        
+        cashier.setId(txtID.getText());
+        cashier.setName(txtName.getText());
+        cashier.setAdress(txtAddress.getText());
+        cashier.setCellPhone(txtCellPhone.getText());
+        cashier.setEmail(txtEmail.getText());
+        
+        
+        saveCashier.CreateCashier(cashier);
+        
+       JOptionPane.showMessageDialog(null, "Cashier added succesfully");
+       
+       
+       
+       
+        
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed

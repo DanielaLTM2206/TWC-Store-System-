@@ -15,6 +15,8 @@ public class FrmWelcome extends javax.swing.JFrame {
      */
     public FrmWelcome() {
         initComponents();
+        this.setLocationRelativeTo(null);
+
     }
 
     /**
@@ -40,7 +42,7 @@ public class FrmWelcome extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 102));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/codeproject/view/s.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/codeproject/images/s.png"))); // NOI18N
         jLabel2.setText("jLabel2");
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans Typewriter", 3, 36)); // NOI18N
