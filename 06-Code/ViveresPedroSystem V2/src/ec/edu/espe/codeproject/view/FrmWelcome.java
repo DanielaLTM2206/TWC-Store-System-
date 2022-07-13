@@ -4,6 +4,8 @@
  */
 package ec.edu.espe.codeproject.view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Daniela Tituaña, DCCO-ESPE, MyWayCode
@@ -16,6 +18,7 @@ public class FrmWelcome extends javax.swing.JFrame {
     public FrmWelcome() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
     }
 

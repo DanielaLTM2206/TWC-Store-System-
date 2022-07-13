@@ -3,6 +3,7 @@ package ec.edu.espe.codeproject.view;
 
 import ec.edu.espe.codeproject.controller.CustomerController;
 import ec.edu.espe.codeproject.model.Customer;
+import javax.swing.JFrame;
 
 
 /**
@@ -16,6 +17,8 @@ public class FrmCustomer extends javax.swing.JFrame {
      */
     public FrmCustomer() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
 
     /**
