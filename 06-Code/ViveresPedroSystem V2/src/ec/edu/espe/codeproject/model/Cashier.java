@@ -33,9 +33,7 @@ public class Cashier {
         
         }
 
-    public Cashier(int id, String name, String address, String numberOfcellphone, String email) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 
     /**
      * @return the id

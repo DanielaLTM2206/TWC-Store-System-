@@ -47,6 +47,7 @@ public class FrmCashier extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         lblIDError = new javax.swing.JLabel();
+        lblNameError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +77,16 @@ public class FrmCashier extends javax.swing.JFrame {
         });
 
         txtName.setToolTipText("Enter your complet name");
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
+        txtName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNameKeyPressed(evt);
+            }
+        });
 
         txtAddress.setToolTipText("Enter your address with streets");
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +120,9 @@ public class FrmCashier extends javax.swing.JFrame {
         lblIDError.setForeground(new java.awt.Color(255, 0, 0));
         lblIDError.setText("_");
 
+        lblNameError.setForeground(new java.awt.Color(255, 0, 0));
+        lblNameError.setText("_");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -125,14 +139,17 @@ public class FrmCashier extends javax.swing.JFrame {
                             .addComponent(jLabel6))
                         .addGap(39, 39, 39)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)
-                                .addComponent(lblIDError))
                             .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCellPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(57, 57, 57)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblNameError)
+                                    .addComponent(lblIDError)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(176, 176, 176)
                         .addComponent(jLabel1))
@@ -141,7 +158,7 @@ public class FrmCashier extends javax.swing.JFrame {
                         .addComponent(jButton1)
                         .addGap(113, 113, 113)
                         .addComponent(jButton3)))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,7 +173,8 @@ public class FrmCashier extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNameError))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -258,6 +276,12 @@ public class FrmCashier extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCellPhoneActionPerformed
 
     private void txtIDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDKeyPressed
+        
+        
+        
+    }//GEN-LAST:event_txtIDKeyPressed
+
+    private void txtNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyPressed
         String value = txtID.getText();
         int length = value.length();
         if(evt.getKeyChar()>='0' && evt.getKeyChar()<='9'){
@@ -272,9 +296,11 @@ public class FrmCashier extends javax.swing.JFrame {
             lblIDError.setText("*Only digits (0-9)");
             
         }
-        
-        
-    }//GEN-LAST:event_txtIDKeyPressed
+    }//GEN-LAST:event_txtNameKeyPressed
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -323,6 +349,7 @@ public class FrmCashier extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblIDError;
+    private javax.swing.JLabel lblNameError;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCellPhone;
     private javax.swing.JTextField txtEmail;
