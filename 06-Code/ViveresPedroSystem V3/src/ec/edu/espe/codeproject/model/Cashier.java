@@ -1,7 +1,5 @@
 package ec.edu.espe.codeproject.model;
 
-import java.util.Scanner;
-
 /**
  * @author Daniela Tituaña, DCCO - ESPE,MyWayCode
  */
