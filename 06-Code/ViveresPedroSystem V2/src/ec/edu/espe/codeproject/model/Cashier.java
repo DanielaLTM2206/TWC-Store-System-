@@ -1,11 +1,12 @@
 package ec.edu.espe.codeproject.model;
 
 import java.util.Scanner;
+import org.bson.Document;
 
 /**
  * @author Daniela Tituaña, DCCO - ESPE,MyWayCode
  */
-public class Cashier {
+public class Cashier extends Abstract {
     private String id;
     private String cellPhone;
     private String name;
@@ -131,7 +132,13 @@ public class Cashier {
      */
     public void setPassword(String password) {
         this.password = password;
-    }}
+    }
+
+    @Override
+    public Document buildDocument() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+}
     
     
    

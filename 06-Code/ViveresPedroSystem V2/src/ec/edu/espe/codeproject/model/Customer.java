@@ -1,11 +1,13 @@
 
 package ec.edu.espe.codeproject.model;
 
+import org.bson.Document;
+
 /**
  *
  * @author Diana Sosa, DCCO-ESPE MyWayCode
  */
-public class Customer {
+public class Customer extends Abstract {
     private int id;
     private String name;
     private String adress;
@@ -93,6 +95,11 @@ public class Customer {
      */
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public Document buildDocument() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
