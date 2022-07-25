@@ -125,7 +125,7 @@ public class FrmDeleteCashier extends javax.swing.JFrame {
             col.deleteOne(eq("_id",Integer.parseInt(txtIdEliminar.getText())));
 
             
-            
+            JOptionPane.showMessageDialog(rootPane, "Cashier delete SucessFully...!");
                       
         }
         catch(Exception e)

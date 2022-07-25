@@ -5,8 +5,11 @@
 package ec.edu.espe.codeproject.controller;
 
 import ec.edu.espe.codeproject.model.Cashier;
+import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -34,6 +37,25 @@ public class CashierController {
         {
             return true;
         }
+    }
+    
+    public void ValidateNumbers (KeyEvent evt, JTextField txt, JLabel IblError){
+        String value = txt.getText();
+        int length = value.length();
+        
+        if(evt.getKeyChar()>='0' && evt.getKeyChar()<='9'){
+            txt.setEditable(true);
+            IblError.setText("");
+            if(length>9){
+                txt.setEditable(false);
+                IblError.setText("Max 10 digits");
+            }
+        }else{
+            txt.setEditable(true);
+            IblError.setText("*Only digits (0-9)");
+            
+        }
+        
     }
     
 }
