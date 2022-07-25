@@ -17,11 +17,7 @@ public class DBManager {
         if (database == null) {
             String uri = "mongodb+srv://dltituana1:dltituana1@cluster0.il40qoh.mongodb.net/?retryWrites=true&w=majority";
 
-            
-            
             MongoClient mongoClient = MongoClients.create(uri);
-
-  
 
             database = mongoClient.getDatabase("Proyect");
         }

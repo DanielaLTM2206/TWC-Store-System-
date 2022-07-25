@@ -1,12 +1,14 @@
 package ec.edu.espe.codeproject.model;
 
+import org.bson.Document;
+
 /**
  *
 
  * @author Martin Toapanta, DCCO-ESPE, MyWayCode
 
 */
-public class Inventory {
+public class Inventory extends Abstract {
     private String product;
     private int code;
     private String type;
@@ -142,6 +144,11 @@ public class Inventory {
     @Override
     public String toString() {
         return "Inventory{" + "product=" + product + ", code=" + code + ", type=" + type + ", amount=" + amount + ", price=" + price + ", discount=" + discount + ", date=" + date + ", status=" + status + '}';
+    }
+
+    @Override
+    public Document buildDocument() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
    

@@ -1,9 +1,10 @@
 package ec.edu.espe.codeproject.model;
 import java.util.ArrayList;
+import org.bson.Document;
 /**
  * @author Josue Villavicencio, DCCO - ESPE,MyWayCode 
  */
-public class Providers {
+public class Providers extends Abstract {
     private int cellPhone;
     private String providerName;
     private ArrayList<ViveresPedro> viveresPedros;
@@ -66,6 +67,11 @@ public class Providers {
     }
     public void ProviderProduct(ArrayList<ProviderProduct> providerProduct){
         this.providerProduct = providerProduct;
+    }
+
+    @Override
+    public Document buildDocument() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

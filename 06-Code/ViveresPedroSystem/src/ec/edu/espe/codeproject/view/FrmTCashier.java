@@ -54,7 +54,7 @@ public class FrmTCashier extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setBackground(new java.awt.Color(247, 177, 191));
+        jTable1.setBackground(new java.awt.Color(211, 157, 212));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

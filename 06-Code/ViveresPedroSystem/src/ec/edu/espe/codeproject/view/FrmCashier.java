@@ -63,10 +63,11 @@ public class FrmCashier extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         lblIDError = new javax.swing.JLabel();
+        IblNameError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(244, 151, 246));
+        jPanel1.setBackground(new java.awt.Color(211, 157, 212));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 36)); // NOI18N
@@ -178,6 +179,9 @@ public class FrmCashier extends javax.swing.JFrame {
         lblIDError.setForeground(new java.awt.Color(255, 102, 102));
         jPanel1.add(lblIDError, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, -1, -1));
 
+        IblNameError.setForeground(new java.awt.Color(255, 102, 102));
+        jPanel1.add(IblNameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -252,9 +256,27 @@ public class FrmCashier extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIDKeyTyped
 
     private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
-        if (txtName.getText().length() >=20){
-            evt.consume();
+      
+        char c = evt.getKeyChar();
+        String value = txtName.getText();
+        int length = value.length();
+        
+        if ((c < 'a' || c > 'z') && (c < 'A')| c > 'Z'){
+            if ( c != ' ' ) evt.consume();
+           txtName.setEditable(true);
+            IblNameError.setText("");
+            if(length>=26){
+                txtName.setEditable(false);
+                IblNameError.setText("Only Letters");
+            }
+        }else{
+            txtName.setEditable(true);
+            IblNameError.setText("Only letters");
+            
         }
+
+
+
         
     }//GEN-LAST:event_txtNameKeyTyped
 
@@ -299,6 +321,7 @@ public class FrmCashier extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel IblNameError;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
