@@ -4,19 +4,19 @@
  */
 package ec.edu.espe.codeproject.view;
 
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 import com.mongodb.BasicDBObject;
 
 
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
+///import com.mongodb.DB;
+//import com.mongodb.DBCollection;
+//import com.mongodb.DBCursor;
+//import com.mongodb.DBObject;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import static com.mongodb.client.model.Filters.eq;
+//import com.mongodb.client.MongoDatabase;
+//import static com.mongodb.client.model.Filters.eq;
 import ec.edu.espe.codeproject.controller.DBManager;
-import ec.edu.espe.codeproject.model.Cashier;
+//import ec.edu.espe.codeproject.model.Cashier;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import org.bson.Document;
@@ -227,26 +227,26 @@ public class FrmUpdateCashier extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         try
+         //try
         {
-            MongoDatabase userDB = DBManager.getDatabase();
-            MongoCollection<Document> col = userDB.getCollection("Cashier");
+           // MongoDatabase userDB = DBManager.getDatabase();
+            //MongoCollection<Document> col = userDB.getCollection("Cashier");
             
             
             
-            Document doc = col.find(eq("_id",Integer.parseInt(txtIdFind.getText()))).first();
+           // Document doc = col.find(eq("_id",Integer.parseInt(txtIdFind.getText()))).first();
 
-            Gson gson = new Gson();
-            Cashier cashier = gson.fromJson(doc.toJson(), Cashier.class);
+            //Gson gson = new Gson();
+            //Cashier cashier = gson.fromJson(doc.toJson(), Cashier.class);
             
-            txtID.setText(String.valueOf(cashier.getId()));
-            txtName.setText(cashier.getName());
-            txtAddress.setText(cashier.getAdress());
-            txtCellPhone.setText(String.valueOf(cashier.getCellPhone()));
-            txtEmail.setText(cashier.getEmail());
+            //txtID.setText(String.valueOf(cashier.getId()));
+           // txtName.setText(cashier.getName());
+            //txtAddress.setText(cashier.getAdress());
+            //txtCellPhone.setText(String.valueOf(cashier.getCellPhone()));
+            //txtEmail.setText(cashier.getEmail());
              
         }
-        catch(Exception e)
+        //catch(Exception e)
         {
              JOptionPane.showMessageDialog(rootPane, "Please Select Cashier");
         } 
