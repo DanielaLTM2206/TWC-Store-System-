@@ -1,20 +1,27 @@
 package ec.edu.espe.codeproject.model;
+
+import java.util.Scanner;
+import org.bson.Document;
+
 /**
  * @author Daniela Tituaña, DCCO - ESPE,MyWayCode
  */
-public class Cashier {
-    private int id;
-    private int CellPhone;
+public class Cashier extends Abstract {
+    private int _id;
+    private int cellPhone;
     private String name;
     private String adress; 
     private String email;
     private String user; 
     private String password;
+
+    public Cashier() {
+    }
+        
     
-    
-    public Cashier(int id, int CellPhone, String name, String adress, String email, String user, String password) {
-        this.id = id;
-        this.CellPhone = CellPhone;
+    public Cashier(int identification, int cellPhone, String name, String adress, String email, String user, String password) {
+        this._id = identification;
+        this.cellPhone = cellPhone;
         this.name = name;
         this.adress = adress;
         this.email = email;
@@ -22,73 +29,116 @@ public class Cashier {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "Cashier{" + "id=" + id + ", CellPhone=" + CellPhone + ", name=" + name + ", adress=" + adress + ", email=" + email + ", user=" + user + ", password=" + password + '}';
-    }
-    
-    public String toStringData() {
-        return id + "," + CellPhone + "," + adress + "," + email + "," + user + "," + password + "/n";
-    }
-    
+
+   /* public Cashier(int _id, String name, String address, String numberOfcellphone, String email) {
+        }*/
+
+    /**
+     * @return the _id
+     */
     public int getId() {
-        return id;
+        return _id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    /**
+     * @param _id the _id to set
+     */
+    public void setId(int _id) {
+        this._id = _id;
     }
 
+    /**
+     * @return the CellPhone
+     */
     public int getCellPhone() {
-        return CellPhone;
+        return cellPhone;
     }
 
+    /**
+     * @param CellPhone the CellPhone to set
+     */
     public void setCellPhone(int CellPhone) {
-        this.CellPhone = CellPhone;
+        this.cellPhone = CellPhone;
     }
 
+    /**
+     * @return the name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @param name the name to set
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * @return the adress
+     */
     public String getAdress() {
         return adress;
     }
 
+    /**
+     * @param adress the adress to set
+     */
     public void setAdress(String adress) {
         this.adress = adress;
     }
 
+    /**
+     * @return the email
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * @param email the email to set
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * @return the user
+     */
     public String getUser() {
         return user;
     }
 
+    /**
+     * @param user the user to set
+     */
     public void setUser(String user) {
         this.user = user;
     }
 
+    /**
+     * @return the password
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * @param password the password to set
+     */
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
-    
-    
-    
+
+    @Override
+    public Document buildDocument() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
+    
+    
+   
+  
+    
+   

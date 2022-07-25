@@ -1,80 +1,93 @@
+
 package ec.edu.espe.codeproject.model;
-import java.util.ArrayList;
+
 /**
- * @author Diana Sosa
+ *
+ * @author Diana Sosa, DCCO-ESPE MyWayCode
  */
 public class Customer {
     private int id;
-    private int CellPhone;
     private String name;
-    private String adress; 
+    private String adress;
+    private String numberOfcellphone;
     private String email;
-    private ArrayList<Product> Product;
-    
-    public ArrayList<Product> buyProduct(){
-        ArrayList<Product> product= new ArrayList<>();
-        return product;
-    }
-    public ArrayList<Product> changeProduct(){
-        ArrayList<Product> product= new ArrayList<>();
-        return product;
-    }
-     public ArrayList<Product> searchProduct(){
-        ArrayList<Product> product= new ArrayList<>();
-        return product;
-    }
-    public Customer(int id, int CellPhone, String name, String adress, String email) {
+
+    public Customer(int id, String name, String adress, String numberOfcellphone, String email) {
         this.id = id;
-        this.CellPhone = CellPhone;
         this.name = name;
         this.adress = adress;
+        this.numberOfcellphone = numberOfcellphone;
         this.email = email;
     }
 
+    /**
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * @param id the id to set
+     */
     public void setId(int id) {
         this.id = id;
     }
 
-    public int getCellPhone() {
-        return CellPhone;
-    }
-
-    public void setCellPhone(int CellPhone) {
-        this.CellPhone = CellPhone;
-    }
-
+    /**
+     * @return the name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @param name the name to set
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * @return the adress
+     */
     public String getAdress() {
         return adress;
     }
 
+    /**
+     * @param adress the adress to set
+     */
     public void setAdress(String adress) {
         this.adress = adress;
     }
 
+    /**
+     * @return the cellPhone
+     */
+    public String getCellPhone() {
+        return numberOfcellphone;
+    }
+
+    /**
+     * @param cellPhone the cellPhone to set
+     */
+    public void setCellPhone(String cellPhone) {
+        this.numberOfcellphone = cellPhone;
+    }
+
+    /**
+     * @return the email
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * @param email the email to set
+     */
     public void setEmail(String email) {
         this.email = email;
     }
-
-    @Override
-    public String toString() {
-        return "Customer{" + "id=" + id + ", CellPhone=" + CellPhone + ", name=" + name + ", adress=" + adress + ", email=" + email + '}';
-    }
     
-   
 }
