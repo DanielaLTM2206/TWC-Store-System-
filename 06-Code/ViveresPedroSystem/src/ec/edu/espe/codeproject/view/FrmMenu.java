@@ -48,6 +48,7 @@ public class FrmMenu extends javax.swing.JFrame {
         jMenuItem14 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
+        Delete = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -146,13 +147,21 @@ public class FrmMenu extends javax.swing.JFrame {
 
         jMenu2.setText("Customer");
 
-        jMenuItem10.setText("Add Customer");
+        jMenuItem10.setText("Add");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem10ActionPerformed(evt);
             }
         });
         jMenu2.add(jMenuItem10);
+
+        Delete.setText("Delete");
+        Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Delete);
 
         jMenuBar1.add(jMenu2);
 
@@ -233,6 +242,12 @@ public class FrmMenu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
+        FrmDeleteCustomer frmDeleteCustomer = new FrmDeleteCustomer();
+        frmDeleteCustomer.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_DeleteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -270,6 +285,7 @@ public class FrmMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Delete;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
