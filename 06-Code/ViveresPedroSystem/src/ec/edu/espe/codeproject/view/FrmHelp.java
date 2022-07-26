@@ -42,7 +42,7 @@ public class FrmHelp extends javax.swing.JFrame {
 
         jLabel2.setText("If you need help or support with our system, do not hesitate to contact us.");
 
-        jLabel3.setText("myWayCode@espe.edu.ec");
+        jLabel3.setText("dltituana1@espe.edu.ec");
 
         jButton1.setText("RETURN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

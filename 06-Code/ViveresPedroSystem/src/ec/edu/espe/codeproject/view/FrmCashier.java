@@ -13,6 +13,7 @@ import com.mongodb.WriteResult;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import ec.edu.espe.codeproject.controller.CashierController;
+import ec.edu.espe.codeproject.controller.CustomerController;
 import ec.edu.espe.codeproject.controller.DBManager;
 import ec.edu.espe.codeproject.model.Cashier;
 import javax.swing.JFrame;
@@ -62,7 +63,7 @@ public class FrmCashier extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        lblIDError = new javax.swing.JLabel();
+        IblIDError = new javax.swing.JLabel();
         IblNameError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -176,8 +177,8 @@ public class FrmCashier extends javax.swing.JFrame {
         jLabel9.setText("jLabel9");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 110));
 
-        lblIDError.setForeground(new java.awt.Color(255, 102, 102));
-        jPanel1.add(lblIDError, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, -1, -1));
+        IblIDError.setForeground(new java.awt.Color(255, 102, 102));
+        jPanel1.add(IblIDError, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, -1, -1));
 
         IblNameError.setForeground(new java.awt.Color(255, 102, 102));
         jPanel1.add(IblNameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, -1, -1));
@@ -237,16 +238,17 @@ public class FrmCashier extends javax.swing.JFrame {
         
         if(evt.getKeyChar()>='0' && evt.getKeyChar()<='9'){
             txtID.setEditable(true);
-            lblIDError.setText("");
+            IblIDError.setText("");
             if(length>9){
                 txtID.setEditable(false);
-                lblIDError.setText("Max 10 digits");
+                IblIDError.setText("Max 10 digits");
             }
         }else{
             txtID.setEditable(true);
-            lblIDError.setText("*Only digits (0-9)");
+            IblIDError.setText("*Only digits (0-9)");
             
         }
+        
          
 //        if (txtID.getText().length() >=20){
 //            lblIDError.setText("Max 10 digits");
@@ -321,6 +323,7 @@ public class FrmCashier extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel IblIDError;
     private javax.swing.JLabel IblNameError;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
@@ -334,7 +337,6 @@ public class FrmCashier extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblIDError;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCellPhone;
     private javax.swing.JTextField txtEmail;

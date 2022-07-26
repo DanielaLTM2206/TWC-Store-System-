@@ -5,6 +5,7 @@
 package ec.edu.espe.codeproject.controller;
 
 import ec.edu.espe.codeproject.model.Cashier;
+import ec.edu.espe.codeproject.view.FrmCashier;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -39,7 +40,7 @@ public class CashierController {
         }
     }
     
-    public void ValidateNumbers (KeyEvent evt, JTextField txt, JLabel IblError){
+    public void register (KeyEvent evt, JTextField txt, JLabel IblError){
         String value = txt.getText();
         int length = value.length();
         
@@ -56,6 +57,6 @@ public class CashierController {
             
         }
         
-    }
-    
-}
+    }}
+
+   

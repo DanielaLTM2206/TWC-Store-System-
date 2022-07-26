@@ -91,7 +91,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="myWayCode@espe.edu.ec"/>
+            <Property name="text" type="java.lang.String" value="dltituana1@espe.edu.ec"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
