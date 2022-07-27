@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package ec.edu.espe.codeproject.view;
 
 import com.mongodb.BasicDBObject;
@@ -12,7 +8,7 @@ import com.mongodb.DBObject;
 import com.mongodb.WriteResult;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import ec.edu.espe.codeproject.controller.CashierController;
+import ec.edu.espe.codeproject.controller.Validation;
 import ec.edu.espe.codeproject.controller.CustomerController;
 import ec.edu.espe.codeproject.controller.DBManager;
 import ec.edu.espe.codeproject.model.Cashier;
@@ -26,11 +22,13 @@ import org.bson.Document;
  * @author Daniela Tituaña, DCCO-ESPE, MyWayCode
  */
 public class FrmCashier extends javax.swing.JFrame {
+    Validation input;
 
     /**
      * Creates new form Cashier
      */
     public FrmCashier() {
+        input = new Validation();
         initComponents();
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -233,27 +231,7 @@ public class FrmCashier extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCellPhoneActionPerformed
 
     private void txtIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDKeyTyped
-        String value = txtID.getText();
-        int length = value.length();
-        
-        if(evt.getKeyChar()>='0' && evt.getKeyChar()<='9'){
-            txtID.setEditable(true);
-            IblIDError.setText("");
-            if(length>9){
-                txtID.setEditable(false);
-                IblIDError.setText("Max 10 digits");
-            }
-        }else{
-            txtID.setEditable(true);
-            IblIDError.setText("*Only digits (0-9)");
-            
-        }
-        
-         
-//        if (txtID.getText().length() >=20){
-//            lblIDError.setText("Max 10 digits");
-//            evt.consume();
-//        }
+       input.NumberValidation(txtID, evt, IblIDError, 10);
         
     }//GEN-LAST:event_txtIDKeyTyped
 
@@ -269,13 +247,12 @@ public class FrmCashier extends javax.swing.JFrame {
             IblNameError.setText("");
             if(length>=26){
                 txtName.setEditable(false);
-                IblNameError.setText("Only Letters");
-            }
-        }else{
+            }else {
+            IblNameError.setText("Enter Only digits");
             txtName.setEditable(true);
-            IblNameError.setText("Only letters");
+        
             
-        }
+        }}
 
 
 

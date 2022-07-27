@@ -8,12 +8,11 @@ import org.bson.Document;
  */
 public class Cashier extends Abstract {
     private int _id;
-    private int cellPhone;
+    private int cellphone;
     private String name;
     private String adress; 
     private String email;
-    private String user; 
-    private String password;
+    
 
     public Cashier() {
     }
@@ -21,12 +20,11 @@ public class Cashier extends Abstract {
     
     public Cashier(int identification, int cellPhone, String name, String adress, String email, String user, String password) {
         this._id = identification;
-        this.cellPhone = cellPhone;
+        this.cellphone = cellPhone;
         this.name = name;
         this.adress = adress;
         this.email = email;
-        this.user = user;
-        this.password = password;
+      
     }
 
 
@@ -51,14 +49,14 @@ public class Cashier extends Abstract {
      * @return the CellPhone
      */
     public int getCellPhone() {
-        return cellPhone;
+        return cellphone;
     }
 
     /**
      * @param CellPhone the CellPhone to set
      */
     public void setCellPhone(int CellPhone) {
-        this.cellPhone = CellPhone;
+        this.cellphone = CellPhone;
     }
 
     /**
@@ -106,30 +104,7 @@ public class Cashier extends Abstract {
     /**
      * @return the user
      */
-    public String getUser() {
-        return user;
-    }
-
-    /**
-     * @param user the user to set
-     */
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    /**
-     * @return the password
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * @param password the password to set
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
+   
 
     @Override
     public Document buildDocument() {

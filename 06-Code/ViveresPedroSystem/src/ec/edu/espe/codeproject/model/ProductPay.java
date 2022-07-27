@@ -12,6 +12,7 @@ public class ProductPay {
     private float totalPay;
     private float totalPayIva;
 
+   
     public ProductPay(double iva, double discount, int unit, float price, float totalPay, float totalPayIva) {
         this.iva = iva;
         this.discount = discount;
@@ -20,12 +21,8 @@ public class ProductPay {
         this.totalPay = totalPay;
         this.totalPayIva = totalPayIva;
     }
-    
 
-
-   
-
-    public ProductPay() {
+     public ProductPay() {
     }
 
     /**
