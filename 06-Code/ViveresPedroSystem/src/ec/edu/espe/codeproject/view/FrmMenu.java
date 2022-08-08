@@ -48,6 +48,7 @@ public class FrmMenu extends javax.swing.JFrame {
         jMenuItem14 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
+        Delete = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -145,14 +146,27 @@ public class FrmMenu extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Customer");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
 
-        jMenuItem10.setText("Add Customer");
+        jMenuItem10.setText("Add");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem10ActionPerformed(evt);
             }
         });
         jMenu2.add(jMenuItem10);
+
+        Delete.setText("Delete");
+        Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Delete);
 
         jMenuBar1.add(jMenu2);
 
@@ -216,8 +230,9 @@ public class FrmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        FrmAbout frmAbout = new FrmAbout();
-        frmAbout.setVisible(true);
+        FrmAbout about = new FrmAbout();
+        about.setVisible(true);
+        this.setVisible(false);
         
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
@@ -232,6 +247,18 @@ public class FrmMenu extends javax.swing.JFrame {
         frmTCashier.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
+        FrmDeleteCustomer frmDeleteCustomer = new FrmDeleteCustomer();
+        frmDeleteCustomer.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_DeleteActionPerformed
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        FrmInventory frmInventory = new FrmInventory();
+        frmInventory.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenu2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,6 +297,7 @@ public class FrmMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Delete;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -1,22 +1,24 @@
 package ec.edu.espe.codeproject.model;
 
+import org.bson.Document;
+
 /**
  *
 
  * @author Martin Toapanta, DCCO-ESPE, MyWayCode
 
 */
-public class Inventory {
+public class Inventory extends Abstract {
     private String product;
     private int code;
     private String type;
     private int amount;
     private float price;
-    private boolean discount;
+    private int discount;
     private String date;
     private String status;
 
-    public Inventory(String product, int code, String type, int amount, float price, boolean discount, String date, String status) {
+    public Inventory(String product, int code, String type, int amount, float price, int discount, String date, String status) {
         this.product = product;
         this.code = code;
         this.type = type;
@@ -25,6 +27,10 @@ public class Inventory {
         this.discount = discount;
         this.date = date;
         this.status = status;
+    }
+
+    public Inventory() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -100,14 +106,14 @@ public class Inventory {
     /**
      * @return the discount
      */
-    public boolean isDiscount() {
+    public int isDiscount() {
         return discount;
     }
 
     /**
      * @param discount the discount to set
      */
-    public void setDiscount(boolean discount) {
+    public void setDiscount(int discount) {
         this.discount = discount;
     }
 
@@ -142,6 +148,11 @@ public class Inventory {
     @Override
     public String toString() {
         return "Inventory{" + "product=" + product + ", code=" + code + ", type=" + type + ", amount=" + amount + ", price=" + price + ", discount=" + discount + ", date=" + date + ", status=" + status + '}';
+    }
+
+    @Override
+    public Document buildDocument() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
    

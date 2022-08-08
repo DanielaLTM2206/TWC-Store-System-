@@ -55,7 +55,7 @@ public class FrmDeleteCashier extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(244, 151, 246));
+        jPanel1.setBackground(new java.awt.Color(211, 157, 212));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 1, 36)); // NOI18N
@@ -125,7 +125,7 @@ public class FrmDeleteCashier extends javax.swing.JFrame {
             col.deleteOne(eq("_id",Integer.parseInt(txtIdEliminar.getText())));
 
             
-            
+            JOptionPane.showMessageDialog(rootPane, "Cashier delete SucessFully...!");
                       
         }
         catch(Exception e)

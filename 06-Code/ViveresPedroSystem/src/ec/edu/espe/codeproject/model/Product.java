@@ -1,13 +1,14 @@
 package ec.edu.espe.codeproject.model;
 
 import java.util.ArrayList;
+import org.bson.Document;
 
 /**
  *
  * @author Josue Villavicencio, DCCO - ESPE,MyWayCode
  * 
  */
-public class Product {
+public class Product extends Abstract {
     private int code;
     private float price;
     private int lote;
@@ -128,6 +129,11 @@ public class Product {
     }
     public void reciveCashier(Cashier cashier){
         
+    }
+
+    @Override
+    public Document buildDocument() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }    

@@ -10,6 +10,8 @@ import com.mongodb.client.MongoDatabase;
 import ec.edu.espe.codeproject.controller.DBManager;
 import ec.edu.espe.codeproject.model.Cashier;
 import static ec.edu.espe.codeproject.view.FrmCashier.createDBObject;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
@@ -37,6 +39,9 @@ public class FrmTCashier extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         PrintMongoData();
+        Toolkit miPantalla = Toolkit.getDefaultToolkit();
+        Image miIcono = miPantalla.getImage("src/ec.edu.espe.codeproject.images/s.png");
+        setIconImage(miIcono);
     }
 
     /**
@@ -54,7 +59,7 @@ public class FrmTCashier extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setBackground(new java.awt.Color(247, 177, 191));
+        jTable1.setBackground(new java.awt.Color(211, 157, 212));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -158,20 +163,19 @@ public class FrmTCashier extends javax.swing.JFrame {
         MongoCollection<Cashier> collectionCashiers = db.getCollection("Cashier", Cashier.class).withCodecRegistry(codecRegistry);
         List<Cashier> cashiers = collectionCashiers.find(new Document(), Cashier.class).into(new ArrayList<Cashier>());
 
-        Object[][] objects = new Object[cashiers.size()][6];
+        Object[][] objects = new Object[cashiers.size()][5];
 
         for (int i = 0; i < cashiers.size(); i++) {
             objects[i][0] = cashiers.get(i).getId();
             objects[i][1] = cashiers.get(i).getName();
-            objects[i][2] = cashiers.get(i).getUser();
-            objects[i][3] = cashiers.get(i).getEmail();
-            objects[i][4] = cashiers.get(i).getCellPhone();
-            objects[i][5] = cashiers.get(i).getAdress();
+            objects[i][2] = cashiers.get(i).getCellPhone();
+            objects[i][3] = cashiers.get(i).getAdress();
+            objects[i][4] = cashiers.get(i).getEmail();
 
             jTable1.setModel(new javax.swing.table.DefaultTableModel(
                     objects,
                     new String[]{
-                        "Id", "Name", "User", "Email", "Cellphone", "Address"
+                        "Id", "Name", "CellPhone", "Email", "Address"
                     }
             ));
 

@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package ec.edu.espe.codeproject.view;
 
+import ec.edu.espe.codeproject.controller.DBManager;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -144,19 +141,17 @@ public class FrmLogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        String Username="oop";
-        String Password="1234";
+        String username="oop";
+        String password="1234";
 
         String Pass=new String(this.Password.getPassword());
       
-        if(txtUsername.getText().equals(Username)&&Pass.equals(Password)){
+        if(txtUsername.getText().equals(username)&&Pass.equals(password)){
           
         FrmMenu EP=new FrmMenu();
         EP.setVisible(true);
         dispose();
-      
-    
-  
+   
         }
         else{
          JOptionPane.showMessageDialog(this,"Incorrect Username / Password");
