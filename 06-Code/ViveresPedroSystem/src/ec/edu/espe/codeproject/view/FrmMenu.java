@@ -50,7 +50,6 @@ public class FrmMenu extends javax.swing.JFrame {
         jMenuItem10 = new javax.swing.JMenuItem();
         Delete = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -167,10 +166,12 @@ public class FrmMenu extends javax.swing.JFrame {
 
         jMenu3.setText("Inventory");
 
-        jMenuItem1.setText("Search Product");
-        jMenu3.add(jMenuItem1);
-
         jMenuItem8.setText("Add Product");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem8);
 
         jMenuBar1.add(jMenu3);
@@ -204,7 +205,6 @@ public class FrmMenu extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         FrmCashier cashier = new FrmCashier();
         cashier.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
@@ -213,15 +213,13 @@ public class FrmMenu extends javax.swing.JFrame {
         this.setVisible(false);    }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        FrmDeleteCashier frmDeleteCashier = new FrmDeleteCashier();
-        frmDeleteCashier.setVisible(true);
-        this.setVisible(false);
+        FrmDeleteCashier deleteCashier  = new FrmDeleteCashier();
+        deleteCashier.setVisible(true);
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        FrmUpdateCashier frmUpdateCashier = new FrmUpdateCashier();
-        frmUpdateCashier.setVisible(true);
-        this.setVisible(false);
+        FrmUpdateCashier updateCashier = new FrmUpdateCashier();
+        updateCashier.setVisible(true);
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
@@ -231,22 +229,23 @@ public class FrmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        FrmHelp frmHelp = new FrmHelp();
-        frmHelp.setVisible(true);
-        this.setVisible(false);
+        FrmHelp help = new FrmHelp();
+        help.setVisible(true);
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
-        FrmTCashier frmTCashier = new FrmTCashier();
-        frmTCashier.setVisible(true);
-        this.setVisible(false);
+        FrmTCashier tCashier = new FrmTCashier();
+        tCashier.setVisible(true);
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-        FrmDeleteCustomer frmDeleteCustomer = new FrmDeleteCustomer();
-        frmDeleteCustomer.setVisible(true);
-        this.setVisible(false);
+        FrmDeleteCustomer deleteCustomer = new FrmDeleteCustomer();
+        deleteCustomer.setVisible(true);
     }//GEN-LAST:event_DeleteActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        FrmInventory inventory = new FrmInventory();
+        inventory.setVisible(true);    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -297,7 +296,6 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;

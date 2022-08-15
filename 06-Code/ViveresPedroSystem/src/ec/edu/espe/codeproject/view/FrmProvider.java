@@ -4,6 +4,15 @@
  */
 package ec.edu.espe.codeproject.view;
 
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import ec.edu.espe.codeproject.controller.DBManager;
+import ec.edu.espe.codeproject.model.Cashier;
+import ec.edu.espe.codeproject.model.Providers;
+import static ec.edu.espe.codeproject.view.FrmCashier.createDBObject;
+import javax.swing.JOptionPane;
+import org.bson.Document;
+
 /**
  *
  * @author Josue Villavicencio, DCCO - ESPE,MyWayCode
@@ -161,7 +170,7 @@ public class FrmProvider extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+                                   
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

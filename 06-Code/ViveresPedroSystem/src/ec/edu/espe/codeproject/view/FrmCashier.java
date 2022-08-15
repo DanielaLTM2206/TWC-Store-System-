@@ -63,6 +63,8 @@ public class FrmCashier extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         IblIDError = new javax.swing.JLabel();
         IblNameError = new javax.swing.JLabel();
+        IblCellError = new javax.swing.JLabel();
+        EmailComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -143,7 +145,12 @@ public class FrmCashier extends javax.swing.JFrame {
         jPanel1.add(txtCellPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 168, -1));
 
         txtEmail.setToolTipText("dont forget @");
-        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 216, -1));
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 140, -1));
 
         jButton1.setBackground(new java.awt.Color(253, 186, 255));
         jButton1.setText("ADD");
@@ -179,7 +186,29 @@ public class FrmCashier extends javax.swing.JFrame {
         jPanel1.add(IblIDError, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, -1, -1));
 
         IblNameError.setForeground(new java.awt.Color(255, 102, 102));
+        IblNameError.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                IblNameErrorKeyPressed(evt);
+            }
+        });
         jPanel1.add(IblNameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, -1, -1));
+
+        IblCellError.setForeground(new java.awt.Color(255, 51, 51));
+        IblCellError.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                IblCellErrorKeyPressed(evt);
+            }
+        });
+        jPanel1.add(IblCellError, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, -1, -1));
+
+        EmailComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "@gmail.com", "@hotmail.com", "@yahoo.com" }));
+        EmailComboBox.setToolTipText("");
+        EmailComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmailComboBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(EmailComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -237,22 +266,6 @@ public class FrmCashier extends javax.swing.JFrame {
 
     private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
       
-        char c = evt.getKeyChar();
-        String value = txtName.getText();
-        int length = value.length();
-        
-        if ((c < 'a' || c > 'z') && (c < 'A')| c > 'Z'){
-            if ( c != ' ' ) evt.consume();
-           txtName.setEditable(true);
-            IblNameError.setText("");
-            if(length>=26){
-                txtName.setEditable(false);
-            }else {
-            IblNameError.setText("Enter Only digits");
-            txtName.setEditable(true);
-        
-            
-        }}
 
 
 
@@ -262,6 +275,22 @@ public class FrmCashier extends javax.swing.JFrame {
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
+
+    private void IblCellErrorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IblCellErrorKeyPressed
+        input.NumberValidation(txtCellPhone, evt, IblCellError, 10);
+    }//GEN-LAST:event_IblCellErrorKeyPressed
+
+    private void IblNameErrorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IblNameErrorKeyPressed
+        input.StringValidation(txtName, evt, IblNameError, 10);
+    }//GEN-LAST:event_IblNameErrorKeyPressed
+
+    private void EmailComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EmailComboBoxActionPerformed
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -300,6 +329,8 @@ public class FrmCashier extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> EmailComboBox;
+    private javax.swing.JLabel IblCellError;
     private javax.swing.JLabel IblIDError;
     private javax.swing.JLabel IblNameError;
     private javax.swing.JButton jButton1;
