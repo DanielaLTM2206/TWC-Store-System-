@@ -145,6 +145,11 @@ public class FrmMenu extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Customer");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
 
         jMenuItem10.setText("Add");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
@@ -223,8 +228,9 @@ public class FrmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        FrmAbout frmAbout = new FrmAbout();
-        frmAbout.setVisible(true);
+        FrmAbout about = new FrmAbout();
+        about.setVisible(true);
+        this.setVisible(false);
         
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
@@ -243,9 +249,17 @@ public class FrmMenu extends javax.swing.JFrame {
         deleteCustomer.setVisible(true);
     }//GEN-LAST:event_DeleteActionPerformed
 
+<<<<<<< HEAD
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         FrmInventory inventory = new FrmInventory();
         inventory.setVisible(true);    }//GEN-LAST:event_jMenuItem8ActionPerformed
+=======
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        FrmInventory frmInventory = new FrmInventory();
+        frmInventory.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenu2ActionPerformed
+>>>>>>> e6645f9016375f44232fc09ce4706dec3386ef0f
 
     /**
      * @param args the command line arguments

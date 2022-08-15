@@ -14,11 +14,11 @@ public class Inventory extends Abstract {
     private String type;
     private int amount;
     private float price;
-    private boolean discount;
+    private int discount;
     private String date;
     private String status;
 
-    public Inventory(String product, int code, String type, int amount, float price, boolean discount, String date, String status) {
+    public Inventory(String product, int code, String type, int amount, float price, int discount, String date, String status) {
         this.product = product;
         this.code = code;
         this.type = type;
@@ -27,6 +27,10 @@ public class Inventory extends Abstract {
         this.discount = discount;
         this.date = date;
         this.status = status;
+    }
+
+    public Inventory() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -102,14 +106,14 @@ public class Inventory extends Abstract {
     /**
      * @return the discount
      */
-    public boolean isDiscount() {
+    public int isDiscount() {
         return discount;
     }
 
     /**
      * @param discount the discount to set
      */
-    public void setDiscount(boolean discount) {
+    public void setDiscount(int discount) {
         this.discount = discount;
     }
 
