@@ -52,7 +52,6 @@ public class FrmMenu extends javax.swing.JFrame {
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
 
         jMenu6.setText("jMenu6");
 
@@ -192,10 +191,12 @@ public class FrmMenu extends javax.swing.JFrame {
         jMenu7.setText("Providers");
 
         jMenuItem4.setText("Add Provider");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu7.add(jMenuItem4);
-
-        jMenuItem5.setText("Search Provider");
-        jMenu7.add(jMenuItem5);
 
         jMenuBar1.add(jMenu7);
 
@@ -282,6 +283,12 @@ public class FrmMenu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        FrmProvider frmProvider = new FrmProvider();
+        frmProvider.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -341,7 +348,6 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
