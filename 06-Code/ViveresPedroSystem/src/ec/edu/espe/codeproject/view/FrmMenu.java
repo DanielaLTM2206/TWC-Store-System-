@@ -249,17 +249,17 @@ public class FrmMenu extends javax.swing.JFrame {
         deleteCustomer.setVisible(true);
     }//GEN-LAST:event_DeleteActionPerformed
 
-<<<<<<< HEAD
+
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         FrmInventory inventory = new FrmInventory();
         inventory.setVisible(true);    }//GEN-LAST:event_jMenuItem8ActionPerformed
-=======
+
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
         FrmInventory frmInventory = new FrmInventory();
         frmInventory.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenu2ActionPerformed
->>>>>>> e6645f9016375f44232fc09ce4706dec3386ef0f
+
 
     /**
      * @param args the command line arguments
