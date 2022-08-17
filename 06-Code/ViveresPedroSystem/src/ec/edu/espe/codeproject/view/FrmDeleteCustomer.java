@@ -2,7 +2,7 @@
 package ec.edu.espe.codeproject.view;
 
 import ec.edu.espe.codeproject.controller.CustomerController;
-import ec.edu.espe.codeproject.controller.Validation;
+import ec.edu.espe.codeproject.controller.ValidationController;
 import javax.swing.JFrame;
 
 /**
@@ -151,8 +151,8 @@ public class FrmDeleteCustomer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
-        Validation validation;
-        validation = new Validation();
+        ValidationController validation;
+        validation = new ValidationController();
         validation.NumberValidation(txtId, evt, lblErrorId, 10);
     }//GEN-LAST:event_txtIdKeyTyped
 

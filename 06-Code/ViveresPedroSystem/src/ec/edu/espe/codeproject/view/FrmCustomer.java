@@ -1,7 +1,7 @@
 package ec.edu.espe.codeproject.view;
 
 import ec.edu.espe.codeproject.controller.CustomerController;
-import ec.edu.espe.codeproject.controller.Validation;
+import ec.edu.espe.codeproject.controller.ValidationController;
 import ec.edu.espe.codeproject.model.Customer;
 import javax.swing.JFrame;
 
@@ -11,10 +11,10 @@ import javax.swing.JFrame;
  * @author Diana Sosa, DCCO-ESPE MyWayCode
  */
 public class FrmCustomer extends javax.swing.JFrame {
-Validation validation;
+ValidationController validation;
    
     public FrmCustomer() {
-        validation = new Validation();
+        validation = new ValidationController();
         initComponents();
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
