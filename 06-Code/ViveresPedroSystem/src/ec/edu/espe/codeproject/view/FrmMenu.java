@@ -275,12 +275,15 @@ public class FrmMenu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jMenu2ActionPerformed
 
+<<<<<<< HEAD
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         FrmPayProduct frmPayProduct = new FrmPayProduct();
         frmPayProduct.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+=======
+>>>>>>> 888f05df8a782e3068d1af1e6163b81646d006c6
 
     /**
      * @param args the command line arguments
