@@ -1,20 +1,12 @@
 package ec.edu.espe.codeproject.view;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.BasicDBObjectBuilder;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.DBObject;
-import com.mongodb.WriteResult;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import ec.edu.espe.codeproject.controller.Validation;
-import ec.edu.espe.codeproject.controller.CustomerController;
+
+import ec.edu.espe.codeproject.controller.CashierController;
+
+import ec.edu.espe.codeproject.controller.ValidationController;
 import ec.edu.espe.codeproject.controller.DBManager;
 import ec.edu.espe.codeproject.model.Cashier;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import org.bson.Document;
 
 
 /**
@@ -22,17 +14,21 @@ import org.bson.Document;
  * @author Daniela Tituaña, DCCO-ESPE, MyWayCode
  */
 public class FrmCashier extends javax.swing.JFrame {
-    Validation input;
+
+    ValidationController input;
 
     /**
      * Creates new form Cashier
      */
     public FrmCashier() {
-        input = new Validation();
+        input = new ValidationController();
         initComponents();
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         DBManager.getDatabase();
+        returnButton.setOpaque(false);
+        returnButton.setContentAreaFilled(false);
+        returnButton.setBorderPainted(false);
     }
 
     /**
@@ -57,7 +53,7 @@ public class FrmCashier extends javax.swing.JFrame {
         txtCellPhone = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        returnButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -161,14 +157,14 @@ public class FrmCashier extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 90, 60));
 
-        jButton3.setBackground(new java.awt.Color(253, 186, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/codeproject/images/out.png"))); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        returnButton.setBackground(new java.awt.Color(253, 186, 255));
+        returnButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/codeproject/images/out.png"))); // NOI18N
+        returnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                returnButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 440, -1, -1));
+        jPanel1.add(returnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 440, -1, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/codeproject/images/ss.png"))); // NOI18N
         jLabel7.setText("jLabel7");
@@ -224,27 +220,30 @@ public class FrmCashier extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
         FrmMenu frmMenu = new FrmMenu();
         frmMenu.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_returnButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        CashierController cashierController;
+        cashierController = new CashierController();
         Cashier cashier = new Cashier();
         cashier.setId(Integer.parseInt(txtID.getText()));
         cashier.setAdress(txtAddress.getText());
         cashier.setName(txtName.getText());
-        cashier.setEmail(txtEmail.getText());
+        cashier.setEmail(txtEmail.getText() + EmailComboBox.getSelectedItem().toString());
         cashier.setCellPhone(Integer.parseInt(txtCellPhone.getText()));
-     
+
+        cashierController.mongo(cashier, this);
         
-        Document doc;
-                doc= createDBObject(cashier);
-        MongoDatabase userDB = DBManager.getDatabase();
-        MongoCollection<Document> col = userDB.getCollection("Cashier");
-        col.insertOne(doc);
-        JOptionPane.showMessageDialog(null, "Has been saved successfully");
+        txtID.setText("");
+        txtAddress.setText("");
+        txtName.setText("");
+        txtEmail.setText("");
+        txtCellPhone.setText("");
+        EmailComboBox.setActionCommand("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
@@ -260,16 +259,13 @@ public class FrmCashier extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCellPhoneActionPerformed
 
     private void txtIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDKeyTyped
-       input.NumberValidation(txtID, evt, IblIDError, 10);
-        
+        input.NumberValidation(txtID, evt, IblIDError, 10);
+
     }//GEN-LAST:event_txtIDKeyTyped
 
     private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
-      
 
 
-
-        
     }//GEN-LAST:event_txtNameKeyTyped
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -334,7 +330,6 @@ public class FrmCashier extends javax.swing.JFrame {
     private javax.swing.JLabel IblIDError;
     private javax.swing.JLabel IblNameError;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -345,21 +340,12 @@ public class FrmCashier extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton returnButton;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCellPhone;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
- 
-    public static Document createDBObject(Cashier cashier)
-    {
-        Document docBuilder = new Document();
-        docBuilder.append("_id", cashier.getId());
-        docBuilder.append("name", cashier.getName());
-        docBuilder.append("adress", cashier.getAdress());
-        docBuilder.append("cellphone", cashier.getCellPhone());
-        docBuilder.append("email", cashier.getEmail());
-        return docBuilder;
-    }
 }
+

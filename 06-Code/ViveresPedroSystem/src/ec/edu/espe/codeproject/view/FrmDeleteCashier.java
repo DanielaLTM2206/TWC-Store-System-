@@ -4,11 +4,7 @@
  */
 package ec.edu.espe.codeproject.view;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
+
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
@@ -31,6 +27,9 @@ public class FrmDeleteCashier extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         DBManager.getDatabase();     
+        returnButton.setOpaque(false);
+        returnButton.setContentAreaFilled(false);
+        returnButton.setBorderPainted(false);
              
              
     }
@@ -47,7 +46,7 @@ public class FrmDeleteCashier extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnDelete = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        returnButton = new javax.swing.JButton();
         txtIdEliminar = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -72,15 +71,15 @@ public class FrmDeleteCashier extends javax.swing.JFrame {
         });
         jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 198, -1, 38));
 
-        jButton3.setBackground(new java.awt.Color(253, 186, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/codeproject/images/out.png"))); // NOI18N
-        jButton3.setText("RETURN");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        returnButton.setBackground(new java.awt.Color(253, 186, 255));
+        returnButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/codeproject/images/out.png"))); // NOI18N
+        returnButton.setText("RETURN");
+        returnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                returnButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, 52, -1));
+        jPanel1.add(returnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, 52, -1));
 
         txtIdEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,11 +133,11 @@ public class FrmDeleteCashier extends javax.swing.JFrame {
         }    
     }//GEN-LAST:event_btnDeleteActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
         FrmMenu frmMenu = new FrmMenu();
         frmMenu.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_returnButtonActionPerformed
 
     private void txtIdEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdEliminarActionPerformed
         // TODO add your handling code here:
@@ -182,12 +181,12 @@ public class FrmDeleteCashier extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton returnButton;
     private javax.swing.JTextField txtIdEliminar;
     // End of variables declaration//GEN-END:variables
 public  void fillID()

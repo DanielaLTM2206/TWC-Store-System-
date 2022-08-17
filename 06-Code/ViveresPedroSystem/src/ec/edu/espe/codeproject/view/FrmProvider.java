@@ -1,17 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package ec.edu.espe.codeproject.view;
 
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import ec.edu.espe.codeproject.controller.DBManager;
-import ec.edu.espe.codeproject.model.Cashier;
-import ec.edu.espe.codeproject.model.Providers;
-import static ec.edu.espe.codeproject.view.FrmCashier.createDBObject;
-import javax.swing.JOptionPane;
-import org.bson.Document;
 
 /**
  *

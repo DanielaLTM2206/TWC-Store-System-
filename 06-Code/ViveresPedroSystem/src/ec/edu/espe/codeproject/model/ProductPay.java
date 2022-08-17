@@ -1,21 +1,21 @@
 package ec.edu.espe.codeproject.model;
 
+import javax.swing.JTextField;
+
 /**
- *
+ *price
  * @author Daniela Tituaña, DCCO-ESPE, MyWayCode
  */
 public class ProductPay {
-    private double iva;
-    private double discount;
+   
     private int unit;
-    private float price;
+    private float price ;
     private float totalPay;
     private float totalPayIva;
 
    
-    public ProductPay(double iva, double discount, int unit, float price, float totalPay, float totalPayIva) {
-        this.iva = iva;
-        this.discount = discount;
+    public ProductPay( int unit, float price, float totalPay, float totalPayIva) {
+   
         this.unit = unit;
         this.price = price;
         this.totalPay = totalPay;
@@ -24,34 +24,14 @@ public class ProductPay {
 
      public ProductPay() {
     }
+     
+     
+
+ 
 
     /**
-     * @return the iva
-     */
-    public double getIva() {
-        return iva;
-    }
+ 
 
-    /**
-     * @param iva the iva to set
-     */
-    public void setIva(double iva) {
-        this.iva = iva;
-    }
-
-    /**
-     * @return the discount
-     */
-    public double getDiscount() {
-        return discount;
-    }
-
-    /**
-     * @param discount the discount to set
-     */
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
 
     /**
      * @return the unit
@@ -84,7 +64,7 @@ public class ProductPay {
     /**
      * @return the totalPay
      */
-    public float getTotalPay() {
+    public double getTotalPay() {
         return totalPay;
     }
 
@@ -98,7 +78,7 @@ public class ProductPay {
     /**
      * @return the totalPayIva
      */
-    public float getTotalPayIva() {
+    public double getTotalPayIva() {
         return totalPayIva;
     }
 
@@ -109,4 +89,9 @@ public class ProductPay {
         this.totalPayIva = totalPayIva;
     }
     
+    
+    public void total(JTextField txtField){
+       totalPay = price*unit; 
+       txtField.setText("$"+totalPay);
+   }
 }

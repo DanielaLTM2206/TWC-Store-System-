@@ -4,19 +4,18 @@
  */
 package ec.edu.espe.codeproject.controller;
 
-import ec.edu.espe.codeproject.model.Cashier;
-import ec.edu.espe.codeproject.view.FrmCashier;
+
 import java.awt.event.KeyEvent;
-import javax.swing.JFrame;
+
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+
 import javax.swing.JTextField;
 
 /**
  *
  * @author Daniela Tituaña, DCCO-ESPE, MyWayCode
  */
-public class Validation {
+public class ValidationController {
    public void NumberValidation(JTextField txtField, java.awt.event.KeyEvent evt, JLabel lblfield, int length) {
 
         if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9' || Character.isISOControl(evt.getKeyChar())) {

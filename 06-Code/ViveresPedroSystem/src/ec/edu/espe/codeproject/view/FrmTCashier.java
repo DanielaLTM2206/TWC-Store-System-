@@ -9,7 +9,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import ec.edu.espe.codeproject.controller.DBManager;
 import ec.edu.espe.codeproject.model.Cashier;
-import static ec.edu.espe.codeproject.view.FrmCashier.createDBObject;
+
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
