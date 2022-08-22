@@ -30,9 +30,9 @@ public class Inventory extends Abstract {
     }
 
     public Inventory() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+   
     /**
      * @return the product
      */
@@ -106,7 +106,7 @@ public class Inventory extends Abstract {
     /**
      * @return the discount
      */
-    public int isDiscount() {
+    public int getDiscount() {
         return discount;
     }
 

@@ -8,15 +8,29 @@ import javax.swing.JTextField;
  */
 public class ProductPay {
    
-    private int unit;
+    private float unit;
     private float price ;
     private float totalPay;
     private float totalPayIva;
+    private String name;
+    private int id;
+    private String invoice;
 
-   
-    public ProductPay( int unit, float price, float totalPay, float totalPayIva) {
+    public String getInvoice() {
+        return invoice;
+    }
+
+    public void setInvoice(String invoice) {
+        this.invoice = invoice;
+    }
+    
+
+    
+    public ProductPay( float unit, float price, float totalPay, float totalPayIva,String name, int id) {
    
         this.unit = unit;
+        this.name = name;
+        this.id = id;
         this.price = price;
         this.totalPay = totalPay;
         this.totalPayIva = totalPayIva;
@@ -25,25 +39,21 @@ public class ProductPay {
      public ProductPay() {
     }
      
-     
-
- 
-
+  
     /**
  
-
 
     /**
      * @return the unit
      */
-    public int getUnit() {
+    public float getUnit() {
         return unit;
     }
 
     /**
      * @param unit the unit to set
      */
-    public void setUnit(int unit) {
+    public void setUnit(float unit) {
         this.unit = unit;
     }
 
@@ -64,7 +74,7 @@ public class ProductPay {
     /**
      * @return the totalPay
      */
-    public double getTotalPay() {
+    public float getTotalPay() {
         return totalPay;
     }
 
@@ -78,7 +88,7 @@ public class ProductPay {
     /**
      * @return the totalPayIva
      */
-    public double getTotalPayIva() {
+    public float getTotalPayIva() {
         return totalPayIva;
     }
 
@@ -89,9 +99,33 @@ public class ProductPay {
         this.totalPayIva = totalPayIva;
     }
     
-    
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public void total(JTextField txtField){
-       totalPay = price*unit; 
-       txtField.setText("$"+totalPay);
+       totalPay = (float) (price*unit); 
+       //txtField.setText("$"+totalPay);
+       totalPayIva = (float) (totalPay*0.12);
+       txtField.setText("$"+totalPayIva);
    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+    
+    
 }

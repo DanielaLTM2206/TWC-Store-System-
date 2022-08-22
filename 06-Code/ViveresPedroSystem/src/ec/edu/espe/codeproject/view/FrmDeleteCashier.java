@@ -9,6 +9,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import ec.edu.espe.codeproject.controller.DBManager;
+import ec.edu.espe.codeproject.controller.ValidationController;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import org.bson.Document;
@@ -18,11 +19,14 @@ import org.bson.Document;
  * @author Daniela Tituaña, DCCO-ESPE, MyWayCode
  */
 public class FrmDeleteCashier extends javax.swing.JFrame {
+    ValidationController input;
+    
 
     /**
      * Creates new form FrmUpyDeCashier
      */
     public FrmDeleteCashier() {
+        input = new ValidationController();
         initComponents();
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -51,6 +55,7 @@ public class FrmDeleteCashier extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        IblErrorID = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,11 +64,11 @@ public class FrmDeleteCashier extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("DELETE CASHIER");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 12, -1, -1));
+        jLabel1.setText("ELIMINAR ID");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
         btnDelete.setBackground(new java.awt.Color(253, 186, 255));
-        btnDelete.setText("DELETE");
+        btnDelete.setText("ELIMINAR");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -86,11 +91,16 @@ public class FrmDeleteCashier extends javax.swing.JFrame {
                 txtIdEliminarActionPerformed(evt);
             }
         });
+        txtIdEliminar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtIdEliminarKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtIdEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 137, -1));
 
         jLabel7.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("ID to Delete");
+        jLabel7.setText("ID a eliminar");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/codeproject/images/Ellipse 2.png"))); // NOI18N
@@ -100,6 +110,9 @@ public class FrmDeleteCashier extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/codeproject/images/Ellipse 1.png"))); // NOI18N
         jLabel3.setText("jLabel3");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, 100, 120));
+
+        IblErrorID.setForeground(new java.awt.Color(255, 0, 51));
+        jPanel1.add(IblErrorID, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 140, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,6 +156,10 @@ public class FrmDeleteCashier extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdEliminarActionPerformed
 
+    private void txtIdEliminarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdEliminarKeyPressed
+        input.NumberValidation(txtIdEliminar, evt, IblErrorID, 10);
+    }//GEN-LAST:event_txtIdEliminarKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -180,6 +197,7 @@ public class FrmDeleteCashier extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel IblErrorID;
     private javax.swing.JButton btnDelete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

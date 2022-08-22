@@ -175,7 +175,7 @@ public class FrmTCashier extends javax.swing.JFrame {
             jTable1.setModel(new javax.swing.table.DefaultTableModel(
                     objects,
                     new String[]{
-                        "Id", "Name", "CellPhone", "Email", "Address"
+                        "Id", "Nombre", "Telefono", "Email", "Direccion"
                     }
             ));
 

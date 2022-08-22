@@ -1,6 +1,6 @@
 package ec.edu.espe.codeproject.model;
 
-import java.util.Scanner;
+
 import org.bson.Document;
 
 /**

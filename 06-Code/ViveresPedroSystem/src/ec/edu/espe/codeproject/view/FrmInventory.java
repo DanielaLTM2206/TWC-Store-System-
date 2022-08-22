@@ -1,10 +1,10 @@
 package ec.edu.espe.codeproject.view;
 
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+
 import ec.edu.espe.codeproject.controller.DBManager;
+import ec.edu.espe.codeproject.controller.InventoryController;
 import ec.edu.espe.codeproject.model.Inventory;
-import javax.swing.JOptionPane;
+
 import javax.swing.text.Document;
 
 /**
@@ -18,6 +18,7 @@ public class FrmInventory extends javax.swing.JFrame {
      */
     public FrmInventory() {
         initComponents();
+        DBManager.getDatabase();
     }
 
     /**
@@ -195,22 +196,27 @@ public class FrmInventory extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        InventoryController inventoryController;
+        inventoryController = new InventoryController();
+        
         Inventory inventory = new Inventory ();
         inventory.setProduct(TxtProduct.getText());
         inventory.setCode(Integer.parseInt(TxtCode.getText()));
         inventory.setType(TxtType.getText());
         inventory.setAmount(Integer.parseInt(TxtAmount.getText()));
-        inventory.setPrice(Integer.parseInt(TxtPrice.getText()));
+        inventory.setPrice(Float.parseFloat(TxtPrice.getText()));
         inventory.setDiscount(Integer.parseInt(TxtDiscount.getText()));
         inventory.setDate(TxtDate.getText());
      
+        inventoryController.mongo(inventory, this);
         
-        Document doc;
-                doc= createDBObject();
-        MongoDatabase userDB = DBManager.getDatabase();
-        MongoCollection<org.bson.Document> col = userDB.getCollection("Inventory");
-        col.insertOne((org.bson.Document) doc);
-        JOptionPane.showMessageDialog(null, "Has been saved successfully");
+        TxtProduct.setText("");
+        TxtCode.setText("");
+        TxtType.setText("");
+        TxtAmount.setText("");
+        TxtPrice.setText("");
+        TxtDiscount.setText("");
+        TxtDate.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

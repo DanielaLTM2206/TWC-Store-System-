@@ -13,7 +13,7 @@ import org.bson.Document;
  *
 * @author Daniela Tituaña, DCCO - ESPE,MyWayCode */
 public class PayProductController {
-    public void total(ProductPay productPay, JTextField txtField, float totalPay, int unit, float price){
+    public void total(ProductPay productPay, JTextField txtField, float totalPay, float unit, float price){
         
        totalPay = price*unit; 
        txtField.setText("$"+totalPay);
@@ -32,9 +32,14 @@ public class PayProductController {
     public static Document createDBObject(ProductPay productPay)
     {
         Document docBuilder = new Document();
+        docBuilder.append("name", productPay.getName());
+        docBuilder.append("id", productPay.getId());
         docBuilder.append("totalPay", productPay.getTotalPay());
         docBuilder.append("price", productPay.getPrice());
         docBuilder.append("unit", productPay.getUnit());
+        docBuilder.append("invoice", productPay.getInvoice());
+        
+        
        
         return docBuilder;
     }

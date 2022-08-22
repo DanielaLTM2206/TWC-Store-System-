@@ -69,7 +69,7 @@ public class FrmCashier extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("CASHIER");
+        jLabel1.setText("CAJERO");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
@@ -79,17 +79,17 @@ public class FrmCashier extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Name:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, -1));
+        jLabel3.setText("Nombre");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Address:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
+        jLabel4.setText("Direccion");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("CellPhone:");
+        jLabel5.setText("Telefono");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
@@ -97,7 +97,7 @@ public class FrmCashier extends javax.swing.JFrame {
         jLabel6.setText("E-mail:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
 
-        txtID.setToolTipText("Enter you Cedula");
+        txtID.setToolTipText("Ingresa tu cedula");
         txtID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIDActionPerformed(evt);
@@ -109,9 +109,9 @@ public class FrmCashier extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 168, -1));
-        txtID.getAccessibleContext().setAccessibleDescription("Enter only numbers");
+        txtID.getAccessibleContext().setAccessibleDescription("Solo numeros");
 
-        txtName.setToolTipText("Enter your complet name");
+        txtName.setToolTipText("Tu nombre completo");
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
@@ -123,33 +123,40 @@ public class FrmCashier extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 168, -1));
-        txtName.getAccessibleContext().setAccessibleDescription("Enter your Name and Lastname");
+        txtName.getAccessibleContext().setAccessibleDescription("Ingresa tu nombre y apellido");
 
-        txtAddress.setToolTipText("Enter your address with streets");
+        txtAddress.setToolTipText("Direccion completa");
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAddressActionPerformed(evt);
             }
         });
         jPanel1.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 168, -1));
+        txtAddress.getAccessibleContext().setAccessibleName("");
 
         txtCellPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCellPhoneActionPerformed(evt);
             }
         });
+        txtCellPhone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCellPhoneKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtCellPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 168, -1));
 
-        txtEmail.setToolTipText("dont forget @");
+        txtEmail.setToolTipText("no olvides el @");
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
             }
         });
         jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 140, -1));
+        txtEmail.getAccessibleContext().setAccessibleDescription("no olvides el @");
 
         jButton1.setBackground(new java.awt.Color(253, 186, 255));
-        jButton1.setText("ADD");
+        jButton1.setText("AÑADIR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -264,7 +271,7 @@ public class FrmCashier extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIDKeyTyped
 
     private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
-
+        input.StringValidation(txtName, evt, IblNameError, 50);
 
     }//GEN-LAST:event_txtNameKeyTyped
 
@@ -273,11 +280,11 @@ public class FrmCashier extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNameActionPerformed
 
     private void IblCellErrorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IblCellErrorKeyPressed
-        input.NumberValidation(txtCellPhone, evt, IblCellError, 10);
+        
     }//GEN-LAST:event_IblCellErrorKeyPressed
 
     private void IblNameErrorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IblNameErrorKeyPressed
-        input.StringValidation(txtName, evt, IblNameError, 10);
+        
     }//GEN-LAST:event_IblNameErrorKeyPressed
 
     private void EmailComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailComboBoxActionPerformed
@@ -287,6 +294,10 @@ public class FrmCashier extends javax.swing.JFrame {
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void txtCellPhoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCellPhoneKeyPressed
+        input.NumberValidation(txtCellPhone, evt, IblCellError, 10);
+    }//GEN-LAST:event_txtCellPhoneKeyPressed
 
     /**
      * @param args the command line arguments
