@@ -1,7 +1,11 @@
 package ec.edu.espe.codeproject.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import static com.mongodb.client.model.Filters.eq;
+import ec.edu.espe.codeproject.model.Customer;
 import ec.edu.espe.codeproject.model.ProductPay;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -48,5 +52,25 @@ public class PayProductController {
        totalPayIva = (float) (totalPay*0.12+totalPay); 
        txtField.setText("$"+totalPayIva);
    } 
+    
+    public boolean Find(JTextField txtIdFind, JFrame frmFrame,
+             JTextField txtName) {
+        boolean reply;
+        try {
+            MongoDatabase userDB = DBManager.getDatabase();
+            MongoCollection<Document> col = userDB.getCollection("Customer");
+            Document doc = col.find(eq("_id", Integer.parseInt(txtIdFind.getText()))).first();
+            Gson gson = new Gson();
+            Customer customer = gson.fromJson(doc.toJson(), Customer.class);
+            txtName.setText(customer.getName());
+            reply = true;
+
+        } catch (JsonSyntaxException | NumberFormatException e) {
+
+            JOptionPane.showMessageDialog(frmFrame, "Please Select Customer");
+            reply = false;
+        }
+        return reply;
+    }
 }
 

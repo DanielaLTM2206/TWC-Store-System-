@@ -316,8 +316,6 @@ ValidationController validation;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegister;
-    private javax.swing.JButton btnRegister1;
     private javax.swing.JButton btnRegister2;
     private javax.swing.JButton btnSearch1;
     private javax.swing.JLabel jLabel1;
@@ -327,8 +325,6 @@ ValidationController validation;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblErrorCellphone;

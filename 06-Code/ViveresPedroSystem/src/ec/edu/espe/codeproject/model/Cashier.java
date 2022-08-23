@@ -1,14 +1,12 @@
 package ec.edu.espe.codeproject.model;
 
 
-import org.bson.Document;
-
 /**
  * @author Daniela Tituaña, DCCO - ESPE,MyWayCode
  */
-public class Cashier extends Abstract {
+public class Cashier  {
     private int _id;
-    private int cellphone;
+    private String cellphone;
     private String name;
     private String adress; 
     private String email;
@@ -18,18 +16,15 @@ public class Cashier extends Abstract {
     }
         
     
-    public Cashier(int identification, int cellPhone, String name, String adress, String email, String user, String password) {
+    public Cashier(int identification, String name, String adress,String cellphone, String email) {
         this._id = identification;
-        this.cellphone = cellPhone;
+        this.cellphone = cellphone;
         this.name = name;
         this.adress = adress;
         this.email = email;
       
     }
 
-
-   /* public Cashier(int _id, String name, String address, String numberOfcellphone, String email) {
-        }*/
 
     /**
      * @return the _id
@@ -48,15 +43,15 @@ public class Cashier extends Abstract {
     /**
      * @return the CellPhone
      */
-    public int getCellPhone() {
+    public String getCellphone() {
         return cellphone;
     }
 
     /**
-     * @param CellPhone the CellPhone to set
+     * @param cellphone the CellPhone to set
      */
-    public void setCellPhone(int CellPhone) {
-        this.cellphone = CellPhone;
+    public void setCellphone(String cellphone) {
+        this.cellphone = cellphone;
     }
 
     /**
@@ -104,15 +99,10 @@ public class Cashier extends Abstract {
     /**
      * @return the user
      */
-   
-
-    @Override
-    public Document buildDocument() {
-        return null;
-        }
+  
+    
 }
-    
-    
+
    
   
     

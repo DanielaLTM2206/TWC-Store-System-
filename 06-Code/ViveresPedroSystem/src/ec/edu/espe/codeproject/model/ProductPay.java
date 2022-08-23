@@ -108,7 +108,6 @@ public class ProductPay {
     }
     public void total(JTextField txtField){
        totalPay = (float) (price*unit); 
-       //txtField.setText("$"+totalPay);
        totalPayIva = (float) (totalPay*0.12);
        txtField.setText("$"+totalPayIva);
    }

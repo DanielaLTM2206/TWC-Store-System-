@@ -1,8 +1,9 @@
 package ec.edu.espe.codeproject.view;
 
-import ec.edu.espe.codeproject.controller.DBManager;
+import ec.edu.espe.codeproject.controller.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -59,7 +60,7 @@ public class FrmLogIn extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("BIENVENIDO A");
+        jLabel2.setText("WELCOME TO ");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/codeproject/images/schoollogo 1.png"))); // NOI18N
@@ -68,7 +69,7 @@ public class FrmLogIn extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("SISTEMA VIVERES PEDRO");
+        jLabel3.setText("VIVERES PEDRO SYSTEM");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/codeproject/images/Ellipse 1.png"))); // NOI18N
@@ -82,18 +83,18 @@ public class FrmLogIn extends javax.swing.JFrame {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 410));
 
         jLabel7.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        jLabel7.setText("INGRESAR");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 110, 30));
+        jLabel7.setText("SIGN IN");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 80, 30));
 
         jLabel8.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel8.setText("USUARIO");
+        jLabel8.setText("USERNAME");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel9.setText("CONTRASEÑA");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, -1, -1));
+        jLabel9.setText("PASSWORD");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, -1, -1));
 
-        jButton1.setText("INGRESAR");
+        jButton1.setText("LOGIN");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
@@ -104,11 +105,11 @@ public class FrmLogIn extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 90, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 80, -1));
         jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 130, -1));
         jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 130, -1));
 
-        jButton2.setText("REGRESAR");
+        jButton2.setText("RETURN");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
@@ -141,26 +142,9 @@ public class FrmLogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        String username1="Daniela Tituana";
-        String password1="1234";
-        
-      
 
-        String Pass=new String(this.Password.getPassword());
-      
-        if(txtUsername.getText().equals(username1)&&Pass.equals(password1)){
-          
-        FrmMenu EP=new FrmMenu();
-        EP.setVisible(true);
-        dispose();
-   
-        }
-        else{
-         JOptionPane.showMessageDialog(this,"Incorrect Username / Password");
-      }
-        
-        
-        
+       Logger logger =Logger.getInstance();
+       logger.log(this, Password, txtUsername);
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**

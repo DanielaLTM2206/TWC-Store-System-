@@ -47,11 +47,11 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="SOBRE VIVERES PEDRO"/>
+            <Property name="text" type="java.lang.String" value="About Viveres Pedro"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="180" y="100" width="-1" height="-1"/>
+              <AbsoluteConstraints x="230" y="100" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -63,11 +63,11 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Este programa es para asegurar que la persona se enfurezca"/>
+            <Property name="text" type="java.lang.String" value="This program is to ensure that the person enraged"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="150" y="210" width="-1" height="-1"/>
+              <AbsoluteConstraints x="200" y="210" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -79,7 +79,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="en la caja se puede organizar todo el"/>
+            <Property name="text" type="java.lang.String" value="at the checkout can organize all the"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -95,11 +95,11 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="inventario de la tienda para que sea mucho m&#xe1;s f&#xe1;cil administrarlo."/>
+            <Property name="text" type="java.lang.String" value="store&apos;s inventory so that it is much easier to manage it."/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="140" y="280" width="-1" height="-1"/>
+              <AbsoluteConstraints x="190" y="270" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -124,7 +124,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Aplicaci&#xf3;n desarrollada por MyWayCode"/>
+            <Property name="text" type="java.lang.String" value="Application developed by MyWayCode"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -134,7 +134,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="REGRESAR"/>
+            <Property name="text" type="java.lang.String" value="RETURN"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>

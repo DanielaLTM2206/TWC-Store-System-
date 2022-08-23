@@ -6,32 +6,53 @@ package ec.edu.espe.codeproject.model;
  * @author Diana Sosa, DCCO-ESPE MyWayCode
  */
 public class Customer {
-    private int id;
+    private int _id;
+    private String cellphone;
     private String name;
-    private String adress;
-    private String numberOfcellphone;
+    private String adress; 
     private String email;
+    
 
-    public Customer(int id, String name, String adress, String numberOfcellphone, String email) {
-        this.id = id;
+    public Customer() {
+    }
+        
+    
+    public Customer(int identification, String name, String adress,String cellphone, String email) {
+        this._id = identification;
+        this.cellphone = cellphone;
         this.name = name;
         this.adress = adress;
-        this.numberOfcellphone = numberOfcellphone;
         this.email = email;
+      
     }
 
+
     /**
-     * @return the id
+     * @return the _id
      */
     public int getId() {
-        return id;
+        return _id;
     }
 
     /**
-     * @param id the id to set
+     * @param _id the _id to set
      */
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int _id) {
+        this._id = _id;
+    }
+
+    /**
+     * @return the CellPhone
+     */
+    public String getCellphone() {
+        return cellphone;
+    }
+
+    /**
+     * @param cellphone the CellPhone to set
+     */
+    public void setCellphone(String cellphone) {
+        this.cellphone = cellphone;
     }
 
     /**
@@ -63,20 +84,6 @@ public class Customer {
     }
 
     /**
-     * @return the cellPhone
-     */
-    public String getCellPhone() {
-        return numberOfcellphone;
-    }
-
-    /**
-     * @param cellPhone the cellPhone to set
-     */
-    public void setCellPhone(String cellPhone) {
-        this.numberOfcellphone = cellPhone;
-    }
-
-    /**
      * @return the email
      */
     public String getEmail() {
@@ -89,5 +96,9 @@ public class Customer {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    /**
+     * @return the user
+     */
     
 }
